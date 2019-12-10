@@ -9,8 +9,8 @@ else:
 if number < 0:
     t = t * -1
 if t == 0:
-    print('0 and is 0')
-if t > 5:
+    print('{} and is 0'.format(t))
+elif t > 5:
     print('{} and is greater than 5'.format(t))
-else:
+elif t < 6:
     print('{} and is less than 6 and not 0'.format(t))
