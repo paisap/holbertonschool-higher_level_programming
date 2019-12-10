@@ -29,14 +29,15 @@ listint_t *insert_node(listint_t **head, int number)
 			{
 				new->next = aux->next;
 				aux->next = new;
+				break;
 			}
 			aux = aux->next;
 		}
-		if (aux->next == NULL)
-		{
-			aux->next = new;
-			new = NULL;
-		}
+	}
+	if (aux->next == NULL)
+	{
+		aux->next = new;
+		new = NULL;
 	}
 	return (new);
 }
