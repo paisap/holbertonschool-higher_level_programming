@@ -9,12 +9,12 @@ if __name__ == "__main__":
     else:
         if t[2] == '+':
             print('{} + {} = {}'.format(t[1], t[3], add(int(t[1]), int(t[3]))))
-        elif t[2] == '-':
-            print('{} - {} = {}'.format(t[1], t[3], sub(int(t[1], int(t[3])))))
-        elif t[2] == '*':
-            print('{} * {} = {}'.format(t[1], t[3], mul(int(t[1], int(t[3])))))
+        elif t[2] == "-":
+            print('{} - {} = {}'.format(t[1], t[3], sub(int(t[1]), int(t[3]))))
+        elif t[2] == "*":
+            print('{} * {} = {}'.format(t[1], t[3], mul(int(t[1]), int(t[3]))))
         elif t[2] == '/':
-            print('{} / {} = {}'.format(t[1], t[3], div(int(t[1], int(t[3])))))
+            print('{} / {} = {}'.format(t[1], t[3], div(int(t[1]), int(t[3]))))
         else:
             print('Unknown operator. Available operators: +, -, * and /')
             sys.exit(1)
