@@ -12,6 +12,8 @@ int is_palindrome(listint_t **head)
 	while (limit->next != NULL)
 		len++, tmp_prev = limit, limit = limit->next;
 	len++;
+	if (len == 1)
+		return (1);
 	while (i < (len / 2))
 	{
 		if (tmp1->n != limit->n)
