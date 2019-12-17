@@ -20,7 +20,6 @@ int is_palindrome(listint_t **head)
 		if (tmp1->n != limit->n)
 			return (0);
 		limit = tmp_prev;
-		tmp = tmp1->next;
 		while (tmp != limit)
 			tmp_prev = tmp, tmp = tmp->next;
 		tmp1 = tmp1->next;
