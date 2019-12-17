@@ -6,9 +6,12 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *tmp1 = *head, *limit = *head, *tmp_prev;
+	listint_t *tmp, *tmp1, *limit, *tmp_prev;
 	int len = 0, i = 0;
 
+	if (*head == NULL || head == NULL)
+		return (1);
+	tmp1 = *head, limit = *head;
 	while (limit->next != NULL)
 		len++, tmp_prev = limit, limit = limit->next;
 	len++;
