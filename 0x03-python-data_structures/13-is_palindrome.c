@@ -6,25 +6,25 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *tmp1, *limit, *tmp_prev;
-	int len = 0, i = 0;
+	int vector[20], i = 0, j = 0, t = 0;
+	listint_t *tmp;
 
-	if (*head == NULL || head == NULL)
+	if (head == NULL || (*head) == NULL)
 		return (1);
-	tmp1 = *head, limit = *head;
-	while (limit->next != NULL)
-		len++, tmp_prev = limit, limit = limit->next;
-	len++;
-	while (i < (len / 2))
+	tmp = *head;
+	while (tmp)
+		vector[i] = tmp->n, i++, tmp = tmp->next;
+	i--;
+	if (i % 2 != 0)
+		t = (i + 1) / 2;
+	else
+		t = i / 2;
+	while (j < t)
 	{
-		if (tmp1->n != limit->n)
+		if (vector[j] != vector[i])
 			return (0);
-		limit = tmp_prev;
-		tmp = tmp1;
-		while (tmp != limit)
-			tmp_prev = tmp, tmp = tmp->next;
-		tmp1 = tmp1->next;
-		i++;
+		i--;
+		j++;
 	}
 	return (1);
 }
