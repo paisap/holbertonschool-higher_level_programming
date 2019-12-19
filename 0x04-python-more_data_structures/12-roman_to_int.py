@@ -6,6 +6,10 @@ def roman_to_int(roman_string):
     j = 0
     l = 7
     result = 0
+    if roman_string == None:
+        return 0
+    if str(roman_string) == False:
+        return 0
     for i in roman_string:
         j = 0
         for m in matrix[0]:
