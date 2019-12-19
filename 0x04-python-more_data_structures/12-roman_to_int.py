@@ -10,6 +10,14 @@ def roman_to_int(roman_string):
         return 0
     if str(roman_string) == False:
         return 0
+    for m in roman_string:
+        j = 0
+        for h in matrix[0]:
+            if m != h:
+                j += 1
+        if j != 6:
+            return 0
+    j = 0
     for i in roman_string:
         j = 0
         for m in matrix[0]:
