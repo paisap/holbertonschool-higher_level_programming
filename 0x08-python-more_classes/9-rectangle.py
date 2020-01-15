@@ -74,12 +74,16 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         greater = Rectangle.area(rect_1)
-        if greater > Rectangle.area(rect_2):
+        if greater >= Rectangle.area(rect_2):
             return rect_1
         else:
             return rect_2
 
     @classmethod
     def square(cls, size=0):
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
         new = cls(size, size)
         return new
