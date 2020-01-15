@@ -74,7 +74,7 @@ class Rectangle:
         if type(rect_2) is not Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         greater = Rectangle.area(rect_1)
-        if greater > Rectangle.area(rect_2):
+        if greater >= Rectangle.area(rect_2):
             return rect_1
         else:
             return rect_2
