@@ -1,4 +1,7 @@
 #!/usr/bin/pythoon3
+"""Rectangle class"""
+
+
 class Rectangle:
     """Exceptions are documented in the same way as classes.
         The __init__ created a rectangle.
