@@ -22,9 +22,9 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if type(value) is not int:
-            raise TypeError("width must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     @property
@@ -82,8 +82,8 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         if type(size) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError("width must be an integer")
         if size < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError("width must be >= 0")
         new = cls(size, size)
         return new
