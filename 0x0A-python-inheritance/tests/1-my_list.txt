@@ -1,0 +1,26 @@
+==================
+7. Integer Validator:
+==================
+
+Import the module:
+    >>> MyList = __import__('1-my_list').MyList
+
+Function:
+===========
+tests about base_geometry with cases and operations
+===========
+
+>>> my_list = MyList([])
+>>> my_list.append(-1)
+>>> my_list.append(-132)
+>>> my_list.append(-832)
+>>> my_list.print_sorted()
+[-832, -132, -1]
+
+>>> my_list = MyList([])
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList([4, 23, 8, 9])
+>>> isinstance(my_list, list)
+True

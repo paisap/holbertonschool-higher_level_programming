@@ -1,0 +1,26 @@
+==================
+7. Integer Validator:
+==================
+
+Import the module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Function:
+===========
+tests about base_geometry with cases and operations
+===========
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("name", "santiago")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("float", 5.89)
+Traceback (most recent call last):
+TypeError: float must be an integer
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("negative", -8)
+Traceback (most recent call last):
+ValueError: negative must be greater than 0
