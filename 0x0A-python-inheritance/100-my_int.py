@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class MyInt(int):
     def __init__(self, a):
         self.a = a
