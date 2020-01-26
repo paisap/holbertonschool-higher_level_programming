@@ -68,8 +68,8 @@ class Rectangle(Base):
 
     def __str__(self):
         return "[{}] ({}) {}/{} - {}/{}".format(
-            __class__.__name__, super().id, self.__x, self.__y, self.__width,
-            self.__height)
+            __class__.__name__, super().id, self.__x, self.__y,
+            self.__width, self.__height)
 
     def display(self):
         for i in range(self.__y):
@@ -77,20 +77,39 @@ class Rectangle(Base):
         for i in range(self.__height):
             print("{}{}".format(' ' * self.__x, '#' * self.__width))
 
-    def update(self, *args):
-        j = 0
-        for i in args:
-            if j == 0:
-                super().__init__(i)
-            if j == 1:
-                self.width = i
-            if j == 2:
-                self.height = i
-            if j == 3:
-                self.x = i
-            if j == 4:
-                self.y = i
-            j += 1
-
     def update(self, *args, **kwargs):
-        
+        if args != ():
+            j = 0
+            for i in args:
+                if j == 0:
+                    super().__init__(i)
+                if j == 1:
+                    self.width = i
+                if j == 2:
+                    self.height = i
+                if j == 3:
+                    self.x = i
+                if j == 4:
+                    self.y = i
+                j += 1
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+
+    def to_dictionary(self):
+        new = {}
+        new['id'] = self.id
+        new['width'] = self.width
+        new['height'] = self.height
+        new['x'] = self.x
+        new['y'] = self.y
+        return new
