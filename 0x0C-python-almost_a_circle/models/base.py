@@ -33,12 +33,12 @@ class Base:
         text = []
         with open(filename, mode='w', encoding='UTF-8') as f:
             if list_objs is None:
-                text = []
+                return f.write(cls.to_json_string(None))
             else:
                 for i in list_objs:
                     text.append(i.to_dictionary())
                 json_list = cls.to_json_string(text)
-            f.write(json_list)
+            return f.write(json_list)
 
     @staticmethod
     def from_json_string(json_string):
