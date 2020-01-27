@@ -72,3 +72,32 @@ class Base:
             for i in obj:
                 new.append(cls.create(**i))
         return new
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ ..."""
+        filename = "" + cls.__name__ + ".csv"
+        text = []
+        with open(filename, mode='w', encoding='UTF-8') as f:
+            if list_objs is None:
+                return f.write(cls.to_json_string(None))
+            else:
+                for i in list_objs:
+                    text.append(i.to_dictionary())
+                json_list = cls.to_json_string(text)
+            return f.write(json_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """ ..."""
+        h = "" + cls.__name__ + ".csv"
+        text = ""
+        new = []
+        if os.path.exists(h) is False:
+            return []
+        with open(h, "r", encoding="UTF-8") as f:
+            text = f.read()
+            obj = cls.from_json_string(text)
+            for i in obj:
+                new.append(cls.create(**i))
+        return new
