@@ -1,8 +1,15 @@
 #!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+"""
+Class Base with the attributes for the other class
+that inherits from Base
+"""
+
 import json
 
 
 class Base:
+    """ class Base"""
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -14,12 +21,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ ..."""
         if len(list_dictionaries) <= 0 or list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ ..."""
         filename = "" + cls.__name__ + ".json"
         text = []
         with open(filename, mode='w', encoding='UTF-8') as f:
@@ -33,18 +42,21 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """ ..."""
         if json_string is None or len(json_string) <= 0:
             return []
         return list(json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
+        """ ..."""
         tmp = cls(1, 1, 1, 1)
         tmp.update(**dictionary)
         return tmp
 
     @classmethod
     def load_from_file(cls):
+        """ ..."""
         h = "" + cls.__name__ + ".json"
         text = ""
         new = []
