@@ -6,6 +6,7 @@ that inherits from Base
 """
 
 import json
+import os
 
 
 class Base:
@@ -63,6 +64,8 @@ class Base:
         h = "" + cls.__name__ + ".json"
         text = ""
         new = []
+        if os.path.exists(h) is False:
+            return []
         with open(h, "r", encoding="UTF-8") as f:
             text = f.read()
             obj = cls.from_json_string(text)
