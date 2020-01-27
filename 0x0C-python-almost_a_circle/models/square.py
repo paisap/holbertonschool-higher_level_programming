@@ -1,28 +1,38 @@
 #!/usr/bin/python3
+# -*- coding: UTF-8 -*-
+"""
+Class Base with the attributes for the other class
+that inherits from Base
+"""
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-
+    """ Class Square """
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
         self.size = size
 
     def __str__(self):
+        """ ... """
         return "[{}] ({}) {}/{} - {}".format(
             __class__.__name__, self.id, self.x, self.y,
             self.width)
 
     @property
     def size(self):
+        """ ... """
         return self.width
 
     @size.setter
     def size(self, value):
+        """ ... """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """ ... """
         if args != ():
             j = 0
             for i in args:
@@ -47,6 +57,7 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
+        """ ... """
         new = {}
         new['id'] = self.id
         new['size'] = self.size
