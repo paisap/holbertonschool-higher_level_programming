@@ -35,4 +35,22 @@ class Base:
     def from_json_string(json_string):
         if json_string is None or len(json_string) <= 0:
             return []
-        return json.loads(json_string)
+        return list(json.loads(json_string))
+
+    @classmethod
+    def create(cls, **dictionary):
+        tmp = cls(1, 1, 1, 1)
+        tmp.update(**dictionary)
+        return tmp
+
+    @classmethod
+    def load_from_file(cls):
+        h = "" + cls.__name__ + ".json"
+        text = ""
+        new = []
+        with open(h, "r", encoding="UTF-8") as f:
+            text = f.read()
+            obj = cls.from_json_string(text)
+            for i in obj:
+                new.append(cls.create(**i))
+        return new
