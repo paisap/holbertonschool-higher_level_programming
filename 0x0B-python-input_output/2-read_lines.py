@@ -7,4 +7,4 @@ def read_lines(filename="", nb_lines=0):
                 print(line)
         else:
             for i in range(nb_lines):
-                print(f_lines[i], end='')
+                print(f_lines[i])
