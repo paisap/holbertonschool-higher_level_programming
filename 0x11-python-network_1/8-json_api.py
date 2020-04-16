@@ -6,7 +6,7 @@ if __name__ == "__main__":
     x = requests.post("http://0.0.0.0:5000/search_user", data={"q": q})
     try:
         if x.json():
-            print("[{}] {}".format(x.json()["name"], x.json()["id"]))
+            print("[{}] {}".format(x.json()["id"], x.json()["name"]))
         else:
             print("No result")
     except ValueError:
