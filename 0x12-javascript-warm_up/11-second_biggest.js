@@ -13,4 +13,4 @@ for (let i = 0; i < matrix.length; i++) {
     menor = matrix[i];
   }
 }
-(process.argv.length === 3) ? console.log(0) : console.log(menor);
+(process.argv.length <= 3) ? console.log(0) : console.log(menor);
